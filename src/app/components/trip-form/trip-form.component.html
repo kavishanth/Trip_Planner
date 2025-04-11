@@ -1,31 +1,43 @@
-<form [formGroup]="tripForm" (ngSubmit)="onSubmit()" class="container mt-4">
-  <div class="row align-items-end g-3">
-    <div class="col-md-3">
-      <label for="startPoint" class="form-label">Start Point</label>
-      <input
-        type="text"
-        id="startPoint"
-        class="form-control"
-        formControlName="startPoint"
-        placeholder="Enter Start Point"
-      />
-    </div>
+<div class="container mt-5">
+  <div class="form-wrapper p-4 rounded shadow-sm">
+    <h4 class="mb-4 text-primary">Trip Planing</h4>
 
-    <div class="col-md-3">
-      <label for="endPoint" class="form-label">End Point</label>
-      <input
-        type="text"
-        id="endPoint"
-        class="form-control"
-        formControlName="endPoint"
-        placeholder="Enter End Point"
-      />
-    </div>
+    <form [formGroup]="tripForm" (ngSubmit)="onSubmit()">
+      <div class="row align-items-end g-3">
+        <div class="col-md-3">
+          <label for="startPoint" class="form-label">Start Point</label>
+          <input
+            type="text"
+            id="startPoint"
+            class="form-control"
+            formControlName="startPoint"
+            placeholder="Enter Start Point"
+          />
+        </div>
 
-    <div class="col-md-auto">
-      <button type="submit" class="btn btn-primary mt-3">
-        Add Trip
-      </button>
-    </div>
+        <div class="col-md-3">
+          <label for="endPoint" class="form-label">End Point</label>
+          <input
+            type="text"
+            id="endPoint"
+            class="form-control"
+            formControlName="endPoint"
+            placeholder="Enter End Point"
+          />
+        </div>
+
+        <div class="col-md-auto">
+          <button type="submit" class="btn btn-primary mt-3">
+            Add Trip
+          </button>
+          <button class="btn btn-outline-warning mt-3 ms-2" type="button" (click)="clearPreviousTrip()">
+            Clear Last Trip
+          </button>
+          <button class="btn btn-outline-danger mt-3 ms-2" type="button" (click)="clearAllTrips()">
+            Clear All Trip
+          </button>
+        </div>
+      </div>
+    </form>
   </div>
-</form>
+</div>

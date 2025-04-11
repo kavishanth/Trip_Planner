@@ -1,4 +1,7 @@
 
 
-<app-trip-form (tripAdded)="onTripAdded($event)"></app-trip-form>
-<app-trip-timeline [trips]="trips"></app-trip-timeline>
+<app-trip-form 
+  (tripAdded)="onTripAdded($event)" 
+  (clearLastTrip)="clearLastTrip()"
+  (clearAllTrip)="clearAllTrip()">
+</app-trip-form><app-trip-timeline [trips]="trips"></app-trip-timeline>

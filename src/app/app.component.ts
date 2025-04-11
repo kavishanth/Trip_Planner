@@ -11,6 +11,7 @@ import { TripTimelineComponent } from './components/trip-timeline/trip-timeline.
 })
 export class AppComponent {
   trips: Trip[] = [];
+  title: any;
 
   onTripAdded({ startPoint, endPoint }: { startPoint: string; endPoint: string }) {
     const shortStart = startPoint.trim().substring(0, 3).toUpperCase();
@@ -29,5 +30,11 @@ export class AppComponent {
     };
 
     this.trips.push(trip);
+  }
+  clearLastTrip() {
+    this.trips.pop(); 
+  }
+  clearAllTrip() {
+    this.trips = [];
   }
 }

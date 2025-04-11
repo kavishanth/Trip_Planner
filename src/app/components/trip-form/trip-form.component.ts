@@ -11,6 +11,8 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class TripFormComponent {
   @Output() tripAdded = new EventEmitter<{ startPoint: string; endPoint: string }>();
+  @Output() clearLastTrip = new EventEmitter<void>();
+  @Output() clearAllTrip = new EventEmitter<void>();
   tripForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -24,5 +26,13 @@ export class TripFormComponent {
     console.log('Form submitted:', this.tripForm.value);
     this.tripAdded.emit(this.tripForm.value);
     this.tripForm.reset();
+  }
+  clearPreviousTrip() {
+    this.tripForm.reset();
+    this.clearLastTrip.emit();
+  }
+  clearAllTrips() {
+    this.tripForm.reset();
+    this.clearAllTrip.emit(); // Optional: notify parent to clear the trip list
   }
 }
