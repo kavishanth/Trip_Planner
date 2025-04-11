@@ -1,0 +1,31 @@
+<form [formGroup]="tripForm" (ngSubmit)="onSubmit()" class="container mt-4">
+  <div class="row align-items-end g-3">
+    <div class="col-md-3">
+      <label for="startPoint" class="form-label">Start Point</label>
+      <input
+        type="text"
+        id="startPoint"
+        class="form-control"
+        formControlName="startPoint"
+        placeholder="Enter Start Point"
+      />
+    </div>
+
+    <div class="col-md-3">
+      <label for="endPoint" class="form-label">End Point</label>
+      <input
+        type="text"
+        id="endPoint"
+        class="form-control"
+        formControlName="endPoint"
+        placeholder="Enter End Point"
+      />
+    </div>
+
+    <div class="col-md-auto">
+      <button type="submit" class="btn btn-primary mt-3">
+        Add Trip
+      </button>
+    </div>
+  </div>
+</form>
